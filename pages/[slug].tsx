@@ -80,7 +80,7 @@ export const getServerSideProps: GetServerSideProps<Props> = async (context) => 
 
 
 
-const restaurants: Restaurant[] = [
+export const restaurants: Restaurant[] = [
   {
     name: "The Burger Joint",
     url: "the-burger-joint",
@@ -88,6 +88,39 @@ const restaurants: Restaurant[] = [
       zipCode: 8000,
       streetName: "Skanderborgvej",
       streetNumber: "255",
+    },
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae urna non est tempus finibus. Etiam cursus massa a sapien finibus sagittis. Sed at ultrices mauris, a consectetur dolor. Morbi sit amet erat nec elit consequat facilisis. Integer risus sapien, commodo ut aliquam eget, pulvinar ac neque. Ut suscipit rutrum purus lobortis sagittis. Ut sed neque dui. Proin sagittis ante nec ex blandit, ut scelerisque enim placerat. Integer malesuada iaculis elit, eu dignissim nisl elementum vel. Duis sed lectus sagittis, sagittis nulla a, fringilla lorem. Maecenas nunc sem, tempus condimentum gravida non, facilisis et quam. Nunc suscipit magna nec justo.",
+    reviews: [
+      {
+        id: "1",
+        comment: "Best food I've ever tasted",
+        rating: 4.5,
+        author: "Stephan Olsen",
+        created_date: "14 May 06:04 - 2022"
+      },
+      {
+        id: "2",
+        comment: "10/10, would recommend!",
+        rating: 5,
+        author: "John Wick",
+        created_date: "12 May 20:34 - 2022"
+      },
+      {
+        id: "3",
+        comment: "The owner is a prick, but the food is decent.",
+        rating: 2,
+        author: "Batman",
+        created_date: "May 7 12:48 - 2022"
+      }
+    ]
+  },
+  {
+    name: "Burger Palace",
+    url: "the-burger-palace",
+    address: {
+      zipCode: 8000,
+      streetName: "Skanderborgvej",
+      streetNumber: "253",
     },
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae urna non est tempus finibus. Etiam cursus massa a sapien finibus sagittis. Sed at ultrices mauris, a consectetur dolor. Morbi sit amet erat nec elit consequat facilisis. Integer risus sapien, commodo ut aliquam eget, pulvinar ac neque. Ut suscipit rutrum purus lobortis sagittis. Ut sed neque dui. Proin sagittis ante nec ex blandit, ut scelerisque enim placerat. Integer malesuada iaculis elit, eu dignissim nisl elementum vel. Duis sed lectus sagittis, sagittis nulla a, fringilla lorem. Maecenas nunc sem, tempus condimentum gravida non, facilisis et quam. Nunc suscipit magna nec justo.",
     reviews: [
