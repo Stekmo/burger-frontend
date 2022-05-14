@@ -54,6 +54,7 @@ export const SubmitReview = ({ onSubmit }: Props) => {
     onSubmit(review)
     setRating(initialRatingState)
     setComment("")
+    setFiles([])
   };
 
   const updateRating = (name: keyof Review["rating"], rating: number) => {
