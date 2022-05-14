@@ -176,6 +176,7 @@ export const restaurants: Restaurant[] = [
         },
         author: "Stephan Olsen",
         created_date: "14 May 06:04 - 2022",
+        imageUrl: "/burger.jpeg"
       },
       {
         id: "2",
@@ -187,6 +188,7 @@ export const restaurants: Restaurant[] = [
         },
         author: "John Wick",
         created_date: "12 May 20:34 - 2022",
+        imageUrl: "/burger2.jpeg"
       },
       {
         id: "3",
@@ -198,6 +200,7 @@ export const restaurants: Restaurant[] = [
         },
         author: "Batman",
         created_date: "May 7 12:48 - 2022",
+        imageUrl: "/burger3.jpeg"
       },
     ],
   },
@@ -244,6 +247,7 @@ export const restaurants: Restaurant[] = [
         },
         author: "Stephan Olsen",
         created_date: "14 May 06:04 - 2022",
+        imageUrl: "/burger.jpeg"
       },
       {
         id: "2",
@@ -255,6 +259,7 @@ export const restaurants: Restaurant[] = [
         },
         author: "John Wick",
         created_date: "12 May 20:34 - 2022",
+        imageUrl: "/burger2.jpeg"
       },
       {
         id: "3",
@@ -266,6 +271,7 @@ export const restaurants: Restaurant[] = [
         },
         author: "Batman",
         created_date: "May 7 12:48 - 2022",
+        imageUrl: "/burger3.jpeg"
       },
     ],
   },
@@ -281,6 +287,7 @@ export type Review = {
   };
   author: string;
   created_date: string;
+  imageUrl: string
 };
 
 export type MenuItem = {
