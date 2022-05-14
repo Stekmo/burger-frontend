@@ -4,7 +4,7 @@ import { IoIosStarHalf, IoIosStarOutline, IoIosStar } from 'react-icons/io'
 
 export const maxRating = 5
 
-export const Rating = ({ rating }: { rating: number}) => {
+export const Rating = ({ rating }: { rating: number }) => {
   const sum = Math.round(rating * 2)
 	const full = Math.floor(sum / 2)
 	const half = sum % 2

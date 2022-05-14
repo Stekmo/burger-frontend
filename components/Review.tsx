@@ -1,4 +1,4 @@
-import { Box, Text } from '@chakra-ui/react';
+import { Box, Flex, Grid, Text } from '@chakra-ui/react';
 import React from 'react';
 import type { Review as ReviewType } from "../pages/[slug]"
 import { Rating } from './Rating';
@@ -6,9 +6,14 @@ import { Rating } from './Rating';
 export const Review = ({ author, comment, created_date, rating }: ReviewType) => {
   return (
     <Box>
-      <Rating rating={rating} />
-      <Text mt={2} fontStyle="italic" fontSize="sm">{created_date} by {author}</Text>
+      <Grid gridTemplateColumns="auto 1fr" gridColumnGap={2} gridRowGap={1} alignItems="center">
+        <Text>Presentation:</Text><Rating rating={rating.presentation} />
+        <Text>Taste:</Text><Rating rating={rating.taste} />
+        <Text>Texture:</Text><Rating rating={rating.texture} />
+      </Grid>
+
       <Text whiteSpace="pre-line" mt={2}>{comment}</Text>
+      <Text mt={2} fontStyle="italic" fontSize="sm">{created_date} by {author}</Text>
     </Box>
   )
 };

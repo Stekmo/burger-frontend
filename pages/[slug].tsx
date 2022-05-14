@@ -169,21 +169,33 @@ export const restaurants: Restaurant[] = [
       {
         id: "1",
         comment: "Best food I've ever tasted",
-        rating: 4.5,
+        rating: {
+          presentation: 4,
+          taste: 5,
+          texture: 5,
+        },
         author: "Stephan Olsen",
         created_date: "14 May 06:04 - 2022",
       },
       {
         id: "2",
         comment: "10/10, would recommend!",
-        rating: 5,
+        rating: {
+          presentation: 5,
+          taste: 4,
+          texture: 3,
+        },
         author: "John Wick",
         created_date: "12 May 20:34 - 2022",
       },
       {
         id: "3",
         comment: "The owner is a prick, but the food is decent.",
-        rating: 2,
+        rating: {
+          presentation: 3,
+          taste: 3,
+          texture: 2,
+        },
         author: "Batman",
         created_date: "May 7 12:48 - 2022",
       },
@@ -225,21 +237,33 @@ export const restaurants: Restaurant[] = [
       {
         id: "1",
         comment: "Best food I've ever tasted",
-        rating: 4.5,
+        rating: {
+          presentation: 4,
+          taste: 5,
+          texture: 5,
+        },
         author: "Stephan Olsen",
         created_date: "14 May 06:04 - 2022",
       },
       {
         id: "2",
         comment: "10/10, would recommend!",
-        rating: 5,
+        rating: {
+          presentation: 5,
+          taste: 4,
+          texture: 3,
+        },
         author: "John Wick",
         created_date: "12 May 20:34 - 2022",
       },
       {
         id: "3",
         comment: "The owner is a prick, but the food is decent.",
-        rating: 2,
+        rating: {
+          presentation: 3,
+          taste: 3,
+          texture: 2,
+        },
         author: "Batman",
         created_date: "May 7 12:48 - 2022",
       },
@@ -250,7 +274,11 @@ export const restaurants: Restaurant[] = [
 export type Review = {
   id: string;
   comment: string;
-  rating: number;
+  rating: {
+    taste: number
+    texture: number
+    presentation: number
+  };
   author: string;
   created_date: string;
 };
