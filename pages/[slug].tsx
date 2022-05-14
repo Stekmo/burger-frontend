@@ -5,10 +5,31 @@ import { formatAddress } from '../utils/format-address'
 import { IoMdArrowBack } from 'react-icons/io'
 import Link from 'next/link'
 import { Review } from '../components/Review'
+import { SubmitReview } from '../components/SubmitReview'
 
 type Props = Restaurant
 
 const Restaurant = ({ name, address, description, reviews }: Props) => {
+  const [submittedReviews, setSubmittedReviews] = React.useState<Review[]>([])
+
+  const onSubmit = (comment: string, rating: number) => {
+    // In a real world this would be sent to an api
+    setSubmittedReviews(reviews => ([...reviews, {
+      comment,
+      rating,
+      author: "Unknown",
+      created_date: new Date().toLocaleDateString("en-US", { year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: false,
+      }),
+      id: reviews.length.toString(),
+    }]))
+  }
+
+
 	return <Container pt={20}>
     <Link href="/">
       <Flex mb={2} cursor="pointer">
@@ -31,9 +52,10 @@ const Restaurant = ({ name, address, description, reviews }: Props) => {
           <Text>{description}</Text>
         </TabPanel>
         <TabPanel>
-          {reviews.map(review => <Box pb={2} mb={4} key={review.id} borderBottom="1px solid rgba(0,0,0,0.2)">
+          {reviews.concat(submittedReviews).map(review => <Box pb={2} mb={4} key={review.id} borderBottom="1px solid rgba(0,0,0,0.2)">
             <Review {...review} />
           </Box>)}
+          <SubmitReview onSubmit={onSubmit} />
         </TabPanel>
       </TabPanels>
     </Tabs>
@@ -74,21 +96,21 @@ const restaurants: Restaurant[] = [
         comment: "Best food I've ever tasted",
         rating: 4.5,
         author: "Stephan Olsen",
-        created_date: "14th May 06:04 - 2022"
+        created_date: "14 May 06:04 - 2022"
       },
       {
         id: "2",
         comment: "10/10, would recommend!",
         rating: 5,
         author: "John Wick",
-        created_date: "12th May 20:34 - 2022"
+        created_date: "12 May 20:34 - 2022"
       },
       {
         id: "3",
         comment: "The owner is a prick, but the food is decent.",
         rating: 2,
         author: "Batman",
-        created_date: "07th May 12:484 - 2022"
+        created_date: "May 7 12:48 - 2022"
       }
     ]
   }

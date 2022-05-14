@@ -8,7 +8,7 @@ export const Review = ({ author, comment, created_date, rating }: ReviewType) =>
     <Box>
       <Rating rating={rating} />
       <Text mt={2} fontStyle="italic" fontSize="sm">{created_date} by {author}</Text>
-      <Text mt={2}>{comment}</Text>
+      <Text whiteSpace="pre-line" mt={2}>{comment}</Text>
     </Box>
   )
 };

@@ -2,7 +2,7 @@ import React from 'react';
 import { Flex } from '@chakra-ui/react';
 import { IoIosStarHalf, IoIosStarOutline, IoIosStar } from 'react-icons/io'
 
-const maxRating = 5
+export const maxRating = 5
 
 export const Rating = ({ rating }: { rating: number}) => {
   const sum = Math.round(rating * 2)
