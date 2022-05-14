@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Text } from '@chakra-ui/react';
-import type { MenuItem as MenuItemType } from "../pages/[slug]"
+import type { MenuItem as MenuItemType } from "../types/restaurant"
 
 export const MenuItem = ({ name, description, price }: MenuItemType) => {
   return (

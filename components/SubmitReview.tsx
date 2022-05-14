@@ -1,7 +1,7 @@
-import { Box, Button, Flex, Grid, Input, Text, Textarea } from "@chakra-ui/react";
+import { Box, Button, Flex, Grid, Text, Textarea } from "@chakra-ui/react";
 import React from "react";
 import { IoIosStar, IoIosStarOutline } from "react-icons/io";
-import { Review } from "../pages/[slug]";
+import type { Review } from "../types/restaurant"
 import { FileUpload } from "./FileUpload";
 import { maxRating } from "./Rating";
 import { nanoid } from 'nanoid'

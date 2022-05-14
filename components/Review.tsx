@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Flex, Grid, Text } from '@chakra-ui/react';
-import type { Review as ReviewType } from "../pages/[slug]"
+import type { Review as ReviewType } from "../types/restaurant"
 import { Rating } from './Rating';
 import Image from 'next/image';
 
