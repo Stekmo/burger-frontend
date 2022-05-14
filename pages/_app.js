@@ -1,4 +1,4 @@
-import { ChakraProvider } from '@chakra-ui/react'
+import { Box, ChakraProvider } from '@chakra-ui/react'
 import { extendTheme } from '@chakra-ui/react'
 
 const colors = {
@@ -13,8 +13,10 @@ const theme = extendTheme({ colors })
 
 function MyApp({ Component, pageProps }) {
   return (
-    <ChakraProvider>
-      <Component {...pageProps} />
+    <ChakraProvider theme={theme}>
+      <Box minHeight="100vh" bg="#fbfcf0">
+        <Component {...pageProps} />
+      </Box>
     </ChakraProvider>
   )
 }
