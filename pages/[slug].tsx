@@ -30,24 +30,11 @@ const Restaurant = ({
 }: Props) => {
   const [submittedReviews, setSubmittedReviews] = React.useState<Review[]>([]);
 
-  const onSubmit = (comment: string, rating: number) => {
+  const onSubmit = (review: Review) => {
     // In a real world this would be sent to an api
     setSubmittedReviews((reviews) => [
       ...reviews,
-      {
-        comment,
-        rating,
-        author: "Unknown",
-        created_date: new Date().toLocaleDateString("en-US", {
-          year: "numeric",
-          month: "long",
-          day: "numeric",
-          hour: "2-digit",
-          minute: "2-digit",
-          hour12: false,
-        }),
-        id: reviews.length.toString(),
-      },
+      review,
     ]);
   };
 
@@ -176,7 +163,7 @@ export const restaurants: Restaurant[] = [
         },
         author: "Stephan Olsen",
         created_date: "14 May 06:04 - 2022",
-        imageUrl: "/burger.jpeg"
+        images: ["/burger.jpeg"]
       },
       {
         id: "2",
@@ -188,7 +175,7 @@ export const restaurants: Restaurant[] = [
         },
         author: "John Wick",
         created_date: "12 May 20:34 - 2022",
-        imageUrl: "/burger2.jpeg"
+        images: ["/burger2.jpeg"]
       },
       {
         id: "3",
@@ -200,7 +187,7 @@ export const restaurants: Restaurant[] = [
         },
         author: "Batman",
         created_date: "May 7 12:48 - 2022",
-        imageUrl: "/burger3.jpeg"
+        images: ["/burger3.jpeg"]
       },
     ],
   },
@@ -247,7 +234,7 @@ export const restaurants: Restaurant[] = [
         },
         author: "Stephan Olsen",
         created_date: "14 May 06:04 - 2022",
-        imageUrl: "/burger.jpeg"
+        images: ["/burger.jpeg"]
       },
       {
         id: "2",
@@ -259,7 +246,7 @@ export const restaurants: Restaurant[] = [
         },
         author: "John Wick",
         created_date: "12 May 20:34 - 2022",
-        imageUrl: "/burger2.jpeg"
+        images: ["/burger2.jpeg"]
       },
       {
         id: "3",
@@ -271,7 +258,7 @@ export const restaurants: Restaurant[] = [
         },
         author: "Batman",
         created_date: "May 7 12:48 - 2022",
-        imageUrl: "/burger3.jpeg"
+        images: ["/burger3.jpeg"]
       },
     ],
   },
@@ -287,7 +274,7 @@ export type Review = {
   };
   author: string;
   created_date: string;
-  imageUrl: string
+  images: string[]
 };
 
 export type MenuItem = {

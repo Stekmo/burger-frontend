@@ -4,7 +4,7 @@ import type { Review as ReviewType } from "../pages/[slug]"
 import { Rating } from './Rating';
 import Image from 'next/image';
 
-export const Review = ({ author, comment, created_date, rating, imageUrl }: ReviewType) => {
+export const Review = ({ author, comment, created_date, rating, images }: ReviewType) => {
   return (
     <Box>
       <Flex justify="space-between">
@@ -13,7 +13,7 @@ export const Review = ({ author, comment, created_date, rating, imageUrl }: Revi
           <Text>Taste:</Text><Rating rating={rating.taste} />
           <Text>Texture:</Text><Rating rating={rating.texture} />
         </Grid>
-        <Image src={imageUrl} alt="burger" width={108} height={85} />
+        {images.map(src => <Image key={src} src={src} alt="burger" width={108} height={85} />)}
       </Flex>
       <Text whiteSpace="pre-line" mt={2}>{comment}</Text>
       <Text mt={2} fontStyle="italic" fontSize="sm">{created_date} by {author}</Text>
